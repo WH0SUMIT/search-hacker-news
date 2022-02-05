@@ -2,7 +2,7 @@
 @import "../../../css/typography/typography.scss";
 
 button {
-  padding: 10px 20px;
+  padding: 8px 18px;
   font-style: normal;
   font-family: $font-poppins;
   font-size: $f-14;
@@ -11,6 +11,13 @@ button {
   color: #fff;
   background: $purple-500;
   border-radius: 8px;
+  &:hover {
+    background: $purple-700;
+  }
+}
+.btn-pill {
+  border-radius: 30px;
+
   &:hover {
     background: $purple-700;
   }
@@ -49,6 +56,13 @@ button {
   }
 }
 
+.btn-gray-soft {
+  background: $grayscale-100;
+  color: $grayscale-700;
+  &:hover {
+    background: $grayscale-300;
+  }
+}
 //button-outline
 
 .btn-outline {
