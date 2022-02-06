@@ -1,11 +1,14 @@
 import Home from "./components/pages/Home";
+import ApiProvider from "./core/apiContext";
 
 import "./css/global.scss";
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <ApiProvider>
+        <Home />
+      </ApiProvider>
     </div>
   );
 }

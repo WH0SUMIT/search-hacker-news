@@ -7,13 +7,14 @@ import { useState } from "react";
 export default function Dropdown({ children, title }) {
   const [showDropdown, setShowDropdown] = useState(false);
 
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
+
   return (
     <ul>
       <li className="dropdown ">
-        <Button
-          className="btn-soft"
-          onClick={() => setShowDropdown(!showDropdown)}
-        >
+        <Button className="btn-soft dropdown-btn" onClick={toggleDropdown}>
           {title}
           {showDropdown ? (
             <RiArrowUpSLine className="icon" />

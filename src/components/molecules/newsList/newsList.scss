@@ -1,3 +1,23 @@
+@import "../../../css/colors/colors.scss";
+@import "../../../css/typography/typography.scss";
+
 .newslist {
   width: inherit;
+  padding: 1.2rem;
+  border-radius: 10px;
+  color: $grayscale-700;
+  .newslist-title {
+    color: $grayscale-100;
+    a {
+      color: $grayscale-500;
+    }
+  }
+  &:hover {
+    background-color: $grayscale-700;
+  }
+  span {
+    font-weight: 700;
+    font-size: $f-12;
+    color: $grayscale-500;
+  }
 }

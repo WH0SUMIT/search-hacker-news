@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { ApiContext } from "../../../core/apiContext";
 import "./Newslist.scss";
 
 export default function Newslist({
@@ -10,18 +8,18 @@ export default function Newslist({
   newsDate,
   newsComments,
   newsId,
+  style,
 }) {
-  const newsTitles = useContext(ApiContext);
   return (
-    <div className="newslist">
-      <div className="newslist__title">
-        {newsTitles} (
+    <div className="newslist" style={style}>
+      <div className="newslist-title">
+        {newsTitle} (
         <a href={newsURL} target="_blank">
           {newsURL}
         </a>
         )
       </div>
-      <span>{newsPoints} Points</span> | <span>{newsUser}</span> |
+      <span>{newsPoints} Points</span> | <span>{newsUser}</span> |{" "}
       <span>{newsDate}</span> | <span>{newsComments} Comments</span>
     </div>
   );

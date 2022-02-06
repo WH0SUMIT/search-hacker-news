@@ -8,7 +8,7 @@ export const ApiContext = createContext();
 export default function ApiProvider(props) {
   const [news, setNews] = useState([]);
   const [newsFlag, setNewsFlag] = useState(false);
-  const newsapi = "https://hn.algolia.com/api/v1/search?query=react";
+  const newsapi = "http://hn.algolia.com/api/v1/search?query=test";
   useEffect(() => {
     axios
       .get(newsapi)
@@ -22,12 +22,8 @@ export default function ApiProvider(props) {
       });
   }, [setNews]);
 
-  const newsTitle = newsFlag
-    ? news.map((news) => {
-        return news.title;
-      })
-    : "loading";
-
+  const newsTitle = newsFlag ? news : "loading";
+  console.log(newsTitle);
   return newsFlag ? (
     <ApiContext.Provider value={newsTitle}>
       {props.children}
