@@ -1,4 +1,4 @@
-import "./button.scss";
+import "./Button.scss";
 
 export default function Button({ children, className, onClick, disabled }) {
   if (disabled === true) {

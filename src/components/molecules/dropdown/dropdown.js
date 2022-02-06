@@ -1,5 +1,5 @@
-import Button from "../../atoms/buttons/button";
-import "./dropdown.scss";
+import Button from "../../atoms/Buttons/Button";
+import "./Dropdown.scss";
 import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
 
 import { useState } from "react";
@@ -22,20 +22,11 @@ export default function Dropdown({ children, title }) {
           )}
         </Button>
         {/* Navbar Dropdown Start */}
-        {showDropdown ? (
+        {showDropdown && (
           <ul
             className="rounded-5"
             style={{
               visibility: "visible",
-            }}
-          >
-            {children}
-          </ul>
-        ) : (
-          <ul
-            className="rounded-5"
-            style={{
-              visibility: "hidden",
             }}
           >
             {children}

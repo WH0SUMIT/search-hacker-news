@@ -1,4 +1,4 @@
-import "./input.scss";
+import "./Input.scss";
 
 export default function Input({
   id,
@@ -6,6 +6,7 @@ export default function Input({
   placeholder,
   value,
   onChange,
+  className,
   onBlur,
   onFocus,
   disabled,
@@ -24,6 +25,7 @@ export default function Input({
         onChange={onChange}
         onBlur={onBlur}
         onFocus={onFocus}
+        className={className}
         style={styles}
         disabled={disabled}
       />
@@ -37,6 +39,7 @@ export default function Input({
         value={value}
         onChange={onChange}
         onBlur={onBlur}
+        className={className}
         style={styles}
         onFocus={onFocus}
         disabled={disabled}

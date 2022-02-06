@@ -1,17 +1,21 @@
-import "./newsList.scss";
-export default function newsList({
+import { useContext } from "react";
+import { ApiContext } from "../../../core/apiContext";
+import "./Newslist.scss";
+
+export default function Newslist({
   newsTitle,
   newsURL,
   newsPoints,
   newsUser,
   newsDate,
   newsComments,
-  newsContent,
+  newsId,
 }) {
+  const newsTitles = useContext(ApiContext);
   return (
     <div className="newslist">
       <div className="newslist__title">
-        {newsTitle} (
+        {newsTitles} (
         <a href={newsURL} target="_blank">
           {newsURL}
         </a>

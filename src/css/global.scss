@@ -16,3 +16,8 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+.row {
+  display: flex;
+  flex-direction: row;
+}

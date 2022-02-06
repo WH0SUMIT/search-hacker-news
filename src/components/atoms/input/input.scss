@@ -4,7 +4,6 @@ textarea {
   width: 100%;
   height: 100%;
   font-size: inherit;
-
   border-radius: 4px;
   &:focus {
     outline: none;
@@ -13,10 +12,14 @@ textarea {
 }
 
 input {
-  padding: 0.4rem;
+  padding: 0.6rem 0.8rem;
   border-radius: 5px;
-  border: 1px solid $grayscale-700;
+  border: 1px solid $grayscale-500;
   &:focus {
     outline: none;
   }
+}
+.input-pill {
+  border-radius: 100px;
+  border: 1px solid $grayscale-500;
 }
