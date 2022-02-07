@@ -23,7 +23,7 @@ export default function Dropdown({ children, title }) {
           )}
         </Button>
         {/* Navbar Dropdown Start */}
-        {showDropdown && (
+        {showDropdown && children && (
           <ul
             className="rounded-5"
             style={{

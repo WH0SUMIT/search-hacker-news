@@ -4,6 +4,7 @@ import { useContext } from "react";
 import Input from "../../atoms/Input/Input";
 import { RiSettings2Fill } from "react-icons/ri";
 import { ApiContext } from "../../../core/apiContext";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const { setSearchQuery } = useContext(ApiContext);
@@ -14,12 +15,12 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <a href="">Search Hacker News</a>
+        <Link to="/">Search Hacker News</Link>
       </div>
       <div className="navbar-search">
         <Input
           type="text"
-          placeholder="Search Hackers News"
+          placeholder="Search Hackers News 🔍"
           width="700"
           className="input-pill"
           onChange={getSearchQuery}

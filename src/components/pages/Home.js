@@ -2,23 +2,17 @@ import { useContext } from "react";
 import { ApiContext } from "../../core/apiContext";
 
 import React from "react";
-import Navbar from "../organism/Navbar/Navbar";
+
 import Dropdown from "../molecules/Dropdown/Dropdown";
 import Card from "../molecules/Card/Card";
-import Newslist from "../molecules/Newslist/Newslist";
+import Newslist from "../molecules/List/Newslist";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const { newsData } = useContext(ApiContext);
   console.log(newsData);
   return (
-    <div
-      style={{
-        margin: "2rem",
-      }}
-    >
-      {/* Navbar Component  */}
-      <Navbar />
-
+    <>
       {/* Search Funtionality */}
       <div
         className="search-container"
@@ -36,24 +30,14 @@ export default function Home() {
         >
           <p>Search</p>
           <Dropdown title="All">
-            <a href="/#">All</a>
-            <a href="/#">Stories</a>
-            <a href="/#">Comments</a>
+            <a href="/#">
+              This is just for UI, it does not have any functionality yet!
+            </a>
           </Dropdown>
           <p>By</p>
-          <Dropdown title="Popularity">
-            <a href="/#">Popularity</a>
-            <a href="/#">Date</a>
-          </Dropdown>
+          <Dropdown title="Popularity"></Dropdown>
           <p>For</p>
-          <Dropdown title="All Time">
-            <a href="/#">All Time</a>
-            <a href="/#">Past Hour</a>
-            <a href="/#">Past 24 Hours</a>
-            <a href="/#">Past Week</a>
-            <a href="/#">Past Month</a>
-            <a href="/#">Past Year</a>
-          </Dropdown>
+          <Dropdown title="All Time"></Dropdown>
         </div>
         <p> {newsData.length} results</p>
       </div>
@@ -64,22 +48,36 @@ export default function Home() {
         {newsData.map((data, index) => {
           const d = new Date(data.created_at);
           return (
-            <Newslist
-              key={index}
-              style={{
-                margin: "1rem",
-              }}
-              newsTitle={data.title}
-              newsURL={data.url}
-              newsPoints={data.points}
-              newsUser={data._highlightResult.author.value}
-              newsDate={d.getUTCFullYear()}
-              newsComments={data.num_comments}
-              newsId={data.id}
-            ></Newslist>
+            data.title && (
+              <Link
+                to={`/comment/${data.objectID}`}
+                key={index}
+                style={{
+                  textDecoration: "none",
+                  color: "white",
+                }}
+                onClick={() => {
+                  localStorage.setItem("newsId", data.objectID);
+                }}
+              >
+                <Newslist
+                  key={index}
+                  style={{
+                    margin: "1rem",
+                  }}
+                  newsTitle={data.title}
+                  newsURL={data.url}
+                  newsPoints={data.points}
+                  newsUser={data._highlightResult.author.value}
+                  newsDate={d.getUTCFullYear()}
+                  newsComments={data.num_comments}
+                  newsId={data.id}
+                ></Newslist>
+              </Link>
+            )
           );
         })}
       </Card>
-    </div>
+    </>
   );
 }

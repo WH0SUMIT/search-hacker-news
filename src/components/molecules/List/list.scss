@@ -21,3 +21,20 @@
     color: $grayscale-500;
   }
 }
+
+.commentlist {
+  padding: 1.2rem;
+
+  .commentlist-title {
+    border-radius: 10px;
+    color: $grayscale-300;
+  }
+  &:hover {
+    background-color: $grayscale-700;
+  }
+  span {
+    font-weight: 700;
+    font-size: $f-12;
+    color: $grayscale-500;
+  }
+}

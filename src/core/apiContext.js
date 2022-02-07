@@ -3,6 +3,7 @@
 import axios from "axios";
 import React from "react";
 import { useState, useEffect, createContext } from "react";
+import Spinner from "../components/atoms/Spinner/Spinner";
 export const ApiContext = createContext();
 
 export default function ApiProvider(props) {
@@ -32,6 +33,6 @@ export default function ApiProvider(props) {
       {props.children}
     </ApiContext.Provider>
   ) : (
-    "loading"
+    <Spinner />
   );
 }

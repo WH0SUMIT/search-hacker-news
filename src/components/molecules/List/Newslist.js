@@ -1,4 +1,4 @@
-import "./Newslist.scss";
+import "./list.scss";
 
 export default function Newslist({
   newsTitle,
@@ -12,6 +12,7 @@ export default function Newslist({
 }) {
   return (
     <div className="newslist" style={style}>
+     
       <div className="newslist-title">
         {newsTitle} (
         <a href={newsURL} target="_blank">
