@@ -8,8 +8,8 @@ import Card from "../molecules/Card/Card";
 import Newslist from "../molecules/Newslist/Newslist";
 
 export default function Home() {
-  const news = useContext(ApiContext);
-  console.log(news);
+  const { newsData } = useContext(ApiContext);
+  console.log(newsData);
   return (
     <div
       style={{
@@ -55,13 +55,13 @@ export default function Home() {
             <a href="/#">Past Year</a>
           </Dropdown>
         </div>
-        <p>{news.length} results</p>
+        <p> {newsData.length} results</p>
       </div>
 
       {/* Card Component With News List */}
 
       <Card className="bg-dark">
-        {news.map((data, index) => {
+        {newsData.map((data, index) => {
           const d = new Date(data.created_at);
           return (
             <Newslist
