@@ -1,7 +1,7 @@
 import "./Navbar.scss";
 
 import { useContext } from "react";
-import Input from "../../atoms/Input/Input";
+import Input from "../../atoms/Input/Input.js";
 import { RiSettings2Fill } from "react-icons/ri";
 import { ApiContext } from "../../../core/apiContext";
 import { Link } from "react-router-dom";
