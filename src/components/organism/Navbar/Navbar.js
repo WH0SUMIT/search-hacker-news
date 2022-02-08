@@ -1,10 +1,10 @@
 import "./Navbar.scss";
 
 import { useContext } from "react";
-import Input from "../../atoms/Input/Input.js";
 import { RiSettings2Fill } from "react-icons/ri";
 import { ApiContext } from "../../../core/apiContext";
 import { Link } from "react-router-dom";
+import InputElement from "../../atoms/Input/InputElement";
 
 export default function Navbar() {
   const { setSearchQuery } = useContext(ApiContext);
@@ -18,7 +18,7 @@ export default function Navbar() {
         <Link to="/">Search Hacker News</Link>
       </div>
       <div className="navbar-search">
-        <Input
+        <InputElement
           type="text"
           placeholder="Search Hackers News 🔍"
           width="700"

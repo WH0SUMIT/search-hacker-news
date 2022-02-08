@@ -1,6 +1,6 @@
 import "./Input.scss";
 
-export default function Input({
+export default function InputElement({
   id,
   type,
   placeholder,
