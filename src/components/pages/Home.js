@@ -39,7 +39,7 @@ export default function Home() {
           <p>For</p>
           <Dropdown title="All Time"></Dropdown>
         </div>
-        <p> {newsData.length} results</p>
+        <p> {newsData.length} News Results</p>
       </div>
 
       {/* Card Component With News List */}

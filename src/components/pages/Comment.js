@@ -46,7 +46,10 @@ export default function Comment() {
             <p>For</p>
             <Dropdown title="All Time"></Dropdown>
           </div>
-          <p className="text-button"> {commentData.children.length} results</p>
+          <p className="text-button">
+            {" "}
+            {commentData.children.length} Comment Results
+          </p>
         </div>
         <Card className="bg-dark">
           <h6
