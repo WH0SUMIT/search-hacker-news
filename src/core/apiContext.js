@@ -24,7 +24,7 @@ export default function ApiProvider(props) {
       .catch((err) => {
         console.log(err);
       });
-  }, [searchQuery]);
+  }, [newsapi]);
 
   const newsData = newsFlag ? news : "loading";
 

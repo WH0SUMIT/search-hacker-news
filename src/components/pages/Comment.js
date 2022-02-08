@@ -59,6 +59,7 @@ export default function Comment() {
             <a
               href={commentData.url}
               target="_blank"
+              rel="noreferrer"
               style={{
                 textDecoration: "none",
                 color: "white",
